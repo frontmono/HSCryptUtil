@@ -14,3 +14,4 @@
 FOUNDATION_EXPORT double HSCryptoUtilVersionNumber;
 FOUNDATION_EXPORT const unsigned char HSCryptoUtilVersionString[];
 
+#import <HSCryptoUtil/HSAES128CFBNode.h>

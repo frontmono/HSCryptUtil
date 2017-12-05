@@ -7,12 +7,17 @@
 //
 
 #import "HSCryptAppDelegate.h"
+@import HSCryptoUtil;
 
+#import <HSCryptoUtil/HSAES128CFBNode.h>
 @implementation HSCryptAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    HSAES128CFBNode* node = [[HSAES128CFBNode alloc] init];
+    NSLog(@"%@", [node description]);
+    
     return YES;
 }
 

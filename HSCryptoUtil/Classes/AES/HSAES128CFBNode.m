@@ -67,25 +67,7 @@
 }
 - (NSString*)testCryptoCFB8WithKey:(NSString*)keyHex ivHex:(NSString*)ivHex text:(NSString*)text isEncrypt:(BOOL)isEncrypt
 {
-#if 0
-    NSData* originData = nil;
-    if (isEncrypt) {
-        originData = [NSData dataWithBytes:[text UTF8String] length:[text length]];
-    }else{
-        //Decryption이면 text가 Hexidecimal이다.
-        originData = [self dataFromHexidecimal:text];
-    }
-    NSData* result = [self AES128Operation:isEncrypt?kCCEncrypt:kCCDecrypt key:keyHex iv:ivHex data:originData];
-    NSString* strRes = nil;
-    [self dumpData:originData];
-    [self dumpData:result];
-    if (isEncrypt) {
-        strRes = [self stringHexFromData:result];
-    }else{
-        strRes = [NSString stringWithUTF8String:[result bytes]];
-    }
-    return strRes;
-#else
+
     NSError *err = nil;
     NSData* dataKey = [self dataFromHexidecimal:keyHex];
     NSData* dataIV = [self dataFromHexidecimal:ivHex];
@@ -97,7 +79,6 @@
     NSLog(@"error %@", [err description]);
     return nil;
     
-#endif
 }
 
 
@@ -113,7 +94,7 @@
                                                      [key length],
                                                      NULL,
                                                      0,
-                                                     1,
+                                                     0,
                                                      0,
                                                      &cryptor);
     
@@ -168,6 +149,9 @@
         strRes = [self stringHexFromData:cipherData];
     }else{
         strRes = [NSString stringWithUTF8String:[cipherData bytes]];
+        if ([strRes length] > [cipherData length]) {
+            strRes = [strRes substringToIndex:[cipherData length] - 1];
+        }
     }
     
     CCCryptorRelease(cryptor);
