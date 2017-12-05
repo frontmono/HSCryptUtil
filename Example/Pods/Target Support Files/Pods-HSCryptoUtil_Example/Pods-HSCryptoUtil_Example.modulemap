@@ -1,0 +1,6 @@
+framework module Pods_HSCryptoUtil_Example {
+  umbrella header "Pods-HSCryptoUtil_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

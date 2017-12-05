@@ -1,0 +1,22 @@
+{
+  "name": "HSCryptoUtil",
+  "version": "0.1.0",
+  "summary": "A short description of HSCryptoUtil.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/HarryKim/HSCryptoUtil",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "HarryKim": "hkim@titanplatform.us"
+  },
+  "source": {
+    "git": "https://github.com/HarryKim/HSCryptoUtil.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "HSCryptoUtil/Classes/**/*"
+}

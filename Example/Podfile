@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HSCryptoUtil_Example' do
+  pod 'HSCryptoUtil', :path => '../'
+
+  target 'HSCryptoUtil_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
