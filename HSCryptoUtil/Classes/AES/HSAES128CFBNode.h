@@ -8,8 +8,8 @@
 #import <Foundation/Foundation.h>
 
 @interface HSAES128CFBNode : NSObject
-@property (nonatomic, retain, readonly) NSString* ivHexadecimal;
-@property (nonatomic, retain, readonly) NSString* keyHexadecimal;
+@property (strong, readonly) NSString* ivHexadecimal;
+@property (strong, readonly) NSString* keyHexadecimal;
 
 
 - (NSString*)encryptCFB8:(NSString*)hexaString error:(NSError**)error;

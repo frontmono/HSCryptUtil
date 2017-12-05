@@ -14,20 +14,25 @@
 
 
 @interface HSAES128CFBNode()
-{
-    NSData* _ivData;
-    NSData* _keyData;
-}
+
+
+@property (strong) NSData* ivData;
+@property (strong) NSData* keyData;
+
+@property (strong) NSString* keyHexadecimal;
+@property (strong) NSString* ivHexadecimal;
+
+
+
 - (void)createAESKey;
 - (NSData*)dataFromHexidecimal:(NSString*)text;
 - (NSString*)stringHexFromData:(NSData*)data;
 - (void)dumpData:(NSData*)data;
 
+
 @end
 
 @implementation HSAES128CFBNode
-@synthesize ivHexadecimal = _ivHexadecimal;
-@synthesize keyHexadecimal = _keyHexadecimal;
 
 - (id)init{
     self = [super init];
@@ -43,8 +48,8 @@
             buffer[i] = (UInt8)(arc4random() % 256);
             str = [str stringByAppendingFormat:@"%02X", buffer[i]];
         }
-        _ivData = [[NSData alloc] initWithBytes:buffer length:AES_CFB_KEY_SIZE];
-        self->_ivHexadecimal = [str retain];
+        self.ivData = [[NSData alloc] initWithBytes:buffer length:AES_CFB_KEY_SIZE];
+        self.ivHexadecimal = str;
     }
     
     
@@ -54,8 +59,8 @@
             buffer[i] = (UInt8)(arc4random() % 256);
             str = [str stringByAppendingFormat:@"%02X", buffer[i]];
         }
-        _keyData = [[NSData alloc] initWithBytes:buffer length:AES_CFB_KEY_SIZE];
-        self->_keyHexadecimal = [str retain];
+        self.keyData = [[NSData alloc] initWithBytes:buffer length:AES_CFB_KEY_SIZE];
+        self.keyHexadecimal = str;
     }
     
     
@@ -217,19 +222,6 @@
 
 - (void)dealloc
 {
-    if (self.ivHexadecimal) {
-        [self->_ivHexadecimal release];
-        
-    }
-    if (self.keyHexadecimal) {
-        [self->_keyHexadecimal release];
-    }
-    if (_ivData) {
-        [_ivData release];
-    }
-    if (_keyData) {
-        [_keyData release];
-    }
-    [super dealloc];
+   
 }
 @end
