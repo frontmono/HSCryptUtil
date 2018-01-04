@@ -114,7 +114,7 @@
     size_t bufferLength = CCCryptorGetOutputLength(cryptor, [originData length], true);
     NSMutableData *buffer = [NSMutableData dataWithLength:bufferLength];
     size_t outLength;
-    NSMutableData *cipherData = [NSMutableData data];
+    
     result = CCCryptorUpdate(cryptor,
                              [originData bytes],
                              [originData length],
@@ -128,7 +128,8 @@
         CCCryptorRelease(cryptor);
         return nil;
     }
-    [cipherData appendBytes:buffer.bytes length:outLength];
+    NSData *cipherData = [NSData dataWithBytes:buffer.bytes length:outLength];
+    //[cipherData appendBytes:buffer.bytes length:outLength];
     
     result = CCCryptorFinal(cryptor,
                             [buffer mutableBytes],
