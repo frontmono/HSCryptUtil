@@ -17,8 +17,8 @@
 		8897B6C5347DDF4A13ADCB1AD6429352 /* HSCryptoUtil-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA162DDEF34B3B807EF93C3735F52B9F /* HSCryptoUtil-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C0D5A252A84A1F7F1FBDC88FF009851 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		9EA6CC65F069E9CA21ED02C46A1985E7 /* Pods-HSCryptoUtil_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B7800422879CDC4E38A7B37BBAB889D5 /* Pods-HSCryptoUtil_Tests-dummy.m */; };
-		B23E95F31FD75940000FBF6D /* HSAES128CFBNode.h in Headers */ = {isa = PBXBuildFile; fileRef = B23E95F21FD7592C000FBF6D /* HSAES128CFBNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B23E95F41FD75949000FBF6D /* HSAES128CFBNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B23E95F11FD7592C000FBF6D /* HSAES128CFBNode.m */; };
+		B21246D91FFD90A90074CB9A /* HSAES128CFBNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B21246D71FFD90A90074CB9A /* HSAES128CFBNode.m */; };
+		B21246DA1FFD90A90074CB9A /* HSAES128CFBNode.h in Headers */ = {isa = PBXBuildFile; fileRef = B21246D81FFD90A90074CB9A /* HSAES128CFBNode.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +53,8 @@
 		9642C0DFE0F6555F197FB7A4D55F38F6 /* HSCryptoUtil-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HSCryptoUtil-dummy.m"; sourceTree = "<group>"; };
 		AE9DCC7D86640BC2B7BE0ACEF329415A /* Pods-HSCryptoUtil_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HSCryptoUtil_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B20526DC66509F673EDCE7171551C92E /* HSCryptoUtil.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HSCryptoUtil.modulemap; sourceTree = "<group>"; };
-		B23E95F11FD7592C000FBF6D /* HSAES128CFBNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HSAES128CFBNode.m; path = ../HSCryptoUtil/Classes/AES/HSAES128CFBNode.m; sourceTree = "<group>"; };
-		B23E95F21FD7592C000FBF6D /* HSAES128CFBNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HSAES128CFBNode.h; path = ../HSCryptoUtil/Classes/AES/HSAES128CFBNode.h; sourceTree = "<group>"; };
+		B21246D71FFD90A90074CB9A /* HSAES128CFBNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSAES128CFBNode.m; path = ../HSCryptoUtil/Classes/AES/HSAES128CFBNode.m; sourceTree = "<group>"; };
+		B21246D81FFD90A90074CB9A /* HSAES128CFBNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSAES128CFBNode.h; path = ../HSCryptoUtil/Classes/AES/HSAES128CFBNode.h; sourceTree = "<group>"; };
 		B624A829F74BE05E97AF3351C12C5955 /* Pods-HSCryptoUtil_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HSCryptoUtil_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B7800422879CDC4E38A7B37BBAB889D5 /* Pods-HSCryptoUtil_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HSCryptoUtil_Tests-dummy.m"; sourceTree = "<group>"; };
 		CB2B7A07371DB794A6E84D1304568116 /* HSCryptoUtil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HSCryptoUtil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +127,7 @@
 		26E82157C918AE7D3B1A70AB5B1EE47F /* HSCryptoUtil */ = {
 			isa = PBXGroup;
 			children = (
-				B23E95EE1FD756B4000FBF6D /* AES */,
+				B21246D61FFD90A20074CB9A /* AES */,
 				30EA401888F72C626DC86F4237F7A0B0 /* ReplaceMe.m */,
 				95963C244DD1FD0A9E6F8BED0447BEDD /* Support Files */,
 			);
@@ -177,11 +177,11 @@
 			path = "Example/Pods/Target Support Files/HSCryptoUtil";
 			sourceTree = "<group>";
 		};
-		B23E95EE1FD756B4000FBF6D /* AES */ = {
+		B21246D61FFD90A20074CB9A /* AES */ = {
 			isa = PBXGroup;
 			children = (
-				B23E95F21FD7592C000FBF6D /* HSAES128CFBNode.h */,
-				B23E95F11FD7592C000FBF6D /* HSAES128CFBNode.m */,
+				B21246D81FFD90A90074CB9A /* HSAES128CFBNode.h */,
+				B21246D71FFD90A90074CB9A /* HSAES128CFBNode.m */,
 			);
 			path = AES;
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8897B6C5347DDF4A13ADCB1AD6429352 /* HSCryptoUtil-umbrella.h in Headers */,
-				B23E95F31FD75940000FBF6D /* HSAES128CFBNode.h in Headers */,
+				B21246DA1FFD90A90074CB9A /* HSAES128CFBNode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,8 +344,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B23E95F41FD75949000FBF6D /* HSAES128CFBNode.m in Sources */,
 				50E46C79F35BBAF3B8CBEC9F0CB97315 /* HSCryptoUtil-dummy.m in Sources */,
+				B21246D91FFD90A90074CB9A /* HSAES128CFBNode.m in Sources */,
 				87211A5899267496C5C84A8DFC8E9329 /* ReplaceMe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
