@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HSCryptoUtil'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'Support Crypto related functions.'
 
 # This description is used to generate tags and improve search results.
